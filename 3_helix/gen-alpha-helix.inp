@@ -1,0 +1,23 @@
+* adopt alpha helix as an initial conformation
+*
+
+define CA sele type CA end
+set begin = 1
+set end = ?nsel
+
+! now fix the backbone dihedrals in alpha helix conformation
+calc resi1 = @begin
+calc resi2 = @begin + 1
+calc resi3 = @begin + 2
+
+label loop
+ic edit
+  dihe @resi1 C @resi2 N @resi2 CA @resi2 C -57. !PHI
+  dihe @resi2 N @resi2 CA @resi2 C @resi3 N -47. !PSI
+end
+incr resi1 by 1
+incr resi2 by 1
+incr resi3 by 1
+if resi3 le @end goto LOOP
+
+return
