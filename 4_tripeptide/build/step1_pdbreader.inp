@@ -12,7 +12,7 @@ read sequ card
 * tripeptide
 *
 3
-@1 @2 @3
+ALA @AA ALA
 
 generate PROA setup warn first NTER last CT2
 

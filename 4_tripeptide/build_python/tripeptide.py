@@ -20,7 +20,7 @@ read sequ card
 * AXA
 *
 3
-ALA %s AXA
+ALA %s ALA
 
 generate PROA setup warn first NTER last CT2
 
