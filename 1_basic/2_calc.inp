@@ -1,0 +1,21 @@
+* CHARMM can be used as a calculator
+*
+
+set A = 1
+set B 2   ! you may skip "="
+
+calc C = 2 * @A
+calc D = 2 * @a         ! generally case insensitive
+calc C_square = @C ** 2 ! Be careful about underscore
+
+! calc C = sqrt(@C_square) ! This will fail
+calc C = sqrt(@{C_square})
+
+! copied from
+calc x = exp(4)            ! e to the power of 4
+calc y = log10(100)        ! log base 10 of 100
+calc z = ln(10)            ! natural log of 10
+calc x = sin(cos(tan(5)))  ! sin of cosine of tangent of 5
+calc y = ln(exp(3))        ! natural log of e to the power of 3
+
+stop

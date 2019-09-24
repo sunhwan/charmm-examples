@@ -1,0 +1,47 @@
+* Reading and writing in CHARMM
+*
+
+!
+! traditional style
+!
+
+! unit = file pointer
+! card = CHARMM formatted
+open read card unit 10 name 1le0_proa.crd
+read sequence coor card unit 10 resid
+
+! CHARMM only considers the first 4 letters when parsing commands
+!read sequ coor card unit 10 resid
+
+! generate segment PROA
+generate PROA setup warn first NTER last CT2
+
+open read unit 10 card name 1le0_proa.crd
+read coor unit 10 card resid
+
+! write PSF
+open write unit 10 card name step1_pdbreader.psf
+write psf  unit 10 card
+
+! write PDB
+open write card unit 10 name step1_pdbreader.pdb
+write coor pdb  unit 10
+
+!
+! modern style
+!
+
+read sequ coor card name 1le0_proa.crd
+generate PROA setup warn first NTER last CT2
+
+read coor card name 1le0_proa.crd resid
+
+write psf card name step1_pdbreader.psf
+* step1_pdbreader
+*
+
+write coor pdb name step1_pdbreader.pdb
+* step1_pdbreader
+*
+
+stop

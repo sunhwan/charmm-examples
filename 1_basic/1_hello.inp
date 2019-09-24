@@ -1,0 +1,10 @@
+* CHARMM expects "title" in the beginning of an input stream
+* followed by an empty line
+*
+
+! comment
+set name = Sunhwan Jo
+
+echo hello, @name
+
+stop
