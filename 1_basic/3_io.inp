@@ -41,7 +41,5 @@ write psf card name step1_pdbreader.psf
 *
 
 write coor pdb name step1_pdbreader.pdb
-* step1_pdbreader
-*
 
 stop
